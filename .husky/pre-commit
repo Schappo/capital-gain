@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run linters on staged files first
+npx lint-staged || {
+  echo "Lint-staged failed. Commit aborted." >&2
+  exit 1
+}
+
+# Run tests next
+npm test --silent || {
+  echo "Tests failed. Commit aborted." >&2
+  exit 1
+}
