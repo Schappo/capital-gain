@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node src/index.ts",
+    "start:dev": "tsx src/index.ts",
+    "start:watch": "tsx --watch src/index.ts",
     "start": "node dist/index.js",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0",
     "format": "prettier --write .",
@@ -32,6 +33,7 @@
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.7.3",
     "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
 }
