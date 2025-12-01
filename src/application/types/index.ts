@@ -1,11 +1,9 @@
-export type TradeOperation = {
+export type OperationInput = {
   operation: 'buy' | 'sell';
   'unit-cost': number;
   quantity: number;
 };
 
-export type TradeResult = {
+export type TaxOutput = {
   tax: number;
-  profit: number;
-  details?: any;
 };

@@ -16,8 +16,18 @@ module.exports = {
       moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
       testMatch: ['<rootDir>/src/**/*.spec.ts'],
       transform: {
-        '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.json' }],
+        '^.+\\.(ts|tsx)$': [
+          'ts-jest',
+          {
+            tsconfig: 'tsconfig.json',
+            useESM: true,
+          },
+        ],
       },
+      moduleNameMapper: {
+        '^(\\.{1,2}/.*)\\.js$': '$1',
+      },
+      extensionsToTreatAsEsm: ['.ts'],
     },
     {
       displayName: 'e2e',
@@ -26,8 +36,18 @@ module.exports = {
       moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
       testMatch: ['<rootDir>/test-e2e/**/*.spec.ts'],
       transform: {
-        '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.json' }],
+        '^.+\\.(ts|tsx)$': [
+          'ts-jest',
+          {
+            tsconfig: 'tsconfig.json',
+            useESM: true,
+          },
+        ],
       },
+      moduleNameMapper: {
+        '^(\\.{1,2}/.*)\\.js$': '$1',
+      },
+      extensionsToTreatAsEsm: ['.ts'],
     },
   ],
 };
